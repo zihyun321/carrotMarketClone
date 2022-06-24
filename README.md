@@ -11,4 +11,6 @@ npx create-next-app@latest --typescript
 # 2. Tailwind CSS
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+## Tailwind Plugin (기본 요소를 tailwind 형태로 변환하는 플러그인)
+npm install tailwindcss/forms
 ```
