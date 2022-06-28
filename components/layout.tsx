@@ -1,4 +1,5 @@
 import React from "react";
+import { cls } from "../libs/utils";
 
 /**
  * TypeScript 쓸때만 사용가능
@@ -24,10 +25,14 @@ export default function Layout({
     children
 }: LayoutProps) {
     return <div>
-        <div className="bg-white w-full text-lg font-medium py-4 fixed text-gray-700 border-b top-0 flex items-center">
+        <div className="bg-white w-full text-lg font-medium py-3 fixed text-gray-800 border-b top-0 justify-center flex items-center">
             {title ? <span>{title}</span> : null}
         </div>
-        {children}
-        {hasTabBar ? <nav></nav> : null}
+        <div className={cls("pt-16", hasTabBar ? "pb-16" : "")}>
+            {children}
+        </div>
+        {hasTabBar ? (<nav className="bg-white text-gray-800 border-t fixed bottom-0 pb-10 pt-3 flex justify-between items-center">
+        </nav>
+        ) : null}
     </div>;
 }
