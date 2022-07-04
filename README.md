@@ -18,21 +18,21 @@ npm install tailwindcss/forms
 npm i prisma -D
 npx prisma # 처음일경우 npx prisma init
 
-# 4. Planet Scale CLI
+# 4. Planet Scale
 brew install planetscale/tap/pscale # planet scale 설치
-brew install mysql-client           # client 설치
+brew install mysql-client           # myslq client 설치
 pscale                              # 설치잘되었는지 확인
 pscale auth login                   # 로그인
-pscale connect carrot-market        # DB와 prisma 연결
 pscale database create <database> --region <region> # database 생성
+npx prisma studio                   # DB 관리자 패널 설치
+npm install @prisma/client          # prisma client
 ```
 
 2. 명령어
 
 ```bash
-# 1. 컴퓨터와 planet scale 보안 연결하기 -> CLI
-pscale connect <database>
-
-# 2. 변경된 DB 스키마 변경하기
-npx prisma db push
+### [Planet Scale]
+pscale connect <database>           # 컴퓨터와 planet scale 보안 연결하기 -> CLI
+npx prisma db push                  # 변경된 DB 스키마 변경하기
+pscale connect carrot-market        # DB와 prisma 연결
 ```
