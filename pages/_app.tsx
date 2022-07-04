@@ -6,7 +6,6 @@ function MyApp({Component, pageProps} : AppProps) {
       <div className='w-full max-w-lg mx-auto'>
         <Component {...pageProps}/>
       </div>
-
     )
 }
 
