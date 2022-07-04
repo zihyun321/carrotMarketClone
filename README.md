@@ -27,9 +27,12 @@ pscale connect carrot-market        # DB와 prisma 연결
 pscale database create <database> --region <region> # database 생성
 ```
 
-2. 실행하기
+2. 명령어
 
 ```bash
 # 1. 컴퓨터와 planet scale 보안 연결하기 -> CLI
 pscale connect <database>
+
+# 2. 변경된 DB 스키마 변경하기
+npx prisma db push
 ```
