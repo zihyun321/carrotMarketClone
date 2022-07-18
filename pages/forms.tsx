@@ -42,6 +42,7 @@ export default function Forms() {
                 type="password"
                 placeholder="Password"
             />
+            <input type="submit" value="Create Account" />
         </form>
     )
 }
