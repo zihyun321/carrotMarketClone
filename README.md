@@ -35,4 +35,5 @@ npm install @prisma/client          # prisma client
 pscale connect <database>           # 컴퓨터와 planet scale 보안 연결하기 -> CLI
 npx prisma db push                  # 변경된 DB 스키마 변경하기
 pscale connect carrot-market        # DB와 prisma 연결
+npx prisma generate                 # Prisma Client 생성했다는 정보 확인
 ```
