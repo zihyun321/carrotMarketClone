@@ -18,4 +18,5 @@ export default async function handler(
     res.status(401).end();
   }
   res.status(200).end();
+  // res.json({ ok:true });
 }
