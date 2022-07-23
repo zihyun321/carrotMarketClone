@@ -7,15 +7,14 @@ async function handler(
   res: NextApiResponse
 ) {
   const { phone, email } = req.body;
+  const payload = phone ? { phone : +phone } : { email };
   const user = await client.user.upsert({
     where: {
-      ...(phone && { phone: +phone }),  // ...()은 if else와 같은 로직
-      ...(email && { email }),
+      ...payload,
     },
     create: {
       name: "Anonymous",  // create는 name이 필수값이다.
-      ...(phone && { phone: +phone }),
-      ...(email && { email }),
+      ...payload,
     },
     update: {}
   });
