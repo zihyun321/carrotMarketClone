@@ -20,4 +20,14 @@ model User {
   avatar    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  token     Token[] // Token의 user Enter 치면 자동생성 22
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  payload   String   @unique
+  user      User     @relation(fields: [userId], references: [id]) // Enter 치면 자동완성
+  userId    Int // User Enter 치면 자동완성 33
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
