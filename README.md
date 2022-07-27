@@ -26,6 +26,10 @@ pscale auth login                   # 로그인
 pscale database create <database> --region <region> # database 생성
 npx prisma studio                   # DB 관리자 패널 설치 혹은 열기
 npm install @prisma/client          # prisma client
+
+# 5. Twilio
+# Twilo란 사람들에게 메세지를 보내기 위해서 사용 (SMS, robocall, 폰번호 숨기기(Ex. 배민))
+
 ```
 
 2. 명령어
