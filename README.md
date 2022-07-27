@@ -29,7 +29,7 @@ npm install @prisma/client          # prisma client
 
 # 5. Twilio
 # Twilo란 사람들에게 메세지를 보내기 위해서 사용 (SMS, robocall, 폰번호 숨기기(Ex. 배민))
-
+npm install twilio                  # twilio sdk 설치
 ```
 
 2. 명령어
