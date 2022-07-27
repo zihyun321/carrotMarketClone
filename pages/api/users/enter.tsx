@@ -1,8 +1,10 @@
+import mail from "@sendgrid/mail"
 import twilio from "twilio";
 import { NextApiRequest, NextApiResponse } from "next";
 import client from "@libs/server/client";
 import withHandler, { ResponseType } from "@libs/server/withHandler";
 
+mail.setApiKey(process.env.SENDGRID_APIKEY!);
 const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 
 async function handler(
@@ -37,6 +39,15 @@ async function handler(
       to: process.env.TWILIO_PHONE!,  // ! 붙이면 이건 확실히 존재하는 변수다.
       body: `Your login token is ${payload}`,
     });  
+  } else if (email) {
+    const email = await mail.send({
+      from: process.env.SENDGRID_EMAIL!,
+      to: process.env.SENDGRID_EMAIL!,
+      subject: "Your Carrot Market Verification Email",
+      text: `Your token is ${payload}`,
+      html: `<strong>Your token is ${payload}</strong>`
+    });
+    console.log('email: ', email);
   }
   return res.json({
     ok: true,
