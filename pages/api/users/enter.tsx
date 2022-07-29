@@ -41,8 +41,8 @@ async function handler(
     });  
   } else if (email) {
     const email = await mail.send({
-      from: process.env.SENDGRID_EMAIL!,
-      to: process.env.SENDGRID_EMAIL!,
+      from: "ziihyun321@gmail.com",
+      to: "ziihyun321@gmail.com",
       subject: "Your Carrot Market Verification Email",
       text: `Your token is ${payload}`,
       html: `<strong>Your token is ${payload}</strong>`
