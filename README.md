@@ -32,6 +32,9 @@ npm install twilio                  # twilio sdk 설치
 
 # 6. Send Grid (Email)
 npm install --save @sendgrid/mail
+
+# 7. iron-session
+npm install iron-session
 ```
 
 2. 명령어
