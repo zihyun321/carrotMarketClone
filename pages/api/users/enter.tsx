@@ -12,7 +12,8 @@ async function handler(
   res: NextApiResponse<ResponseType>
 ) {
   const { phone, email } = req.body;
-  const user = phone ? { phone : +phone } : email ? { email } : null;
+  // const user = phone ? { phone : +phone } : email ? { email } : null;
+  const user = phone ? { phone } : email ? { email } : null;
   if (!user) return res.status(400).json({ ok : false }); 
   const payload = Math.floor(100000 + Math.random() * 900000) + ""; // + "" 이란 string으로 바뀜
   // Token 및 User 생성 (Token과 User 생성은 한 몸! User upsert 하나로 합쳐줌)
@@ -54,4 +55,8 @@ async function handler(
   });
 }
 
-export default withHandler("POST", handler);
+export default withHandler({
+  method: "POST", 
+  handler,
+  isPrivate: false
+});

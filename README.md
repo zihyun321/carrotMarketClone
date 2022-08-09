@@ -34,7 +34,12 @@ npm install twilio                  # twilio sdk 설치
 npm install --save @sendgrid/mail
 
 # 7. iron-session
+# Hook 작성, SWR을 사용해 유저 로그인 상태 확인
 npm install iron-session
+
+# 7-1. NextAuth
+# iron-session 대신해서 사용가능. 훨씬 간편하지만 현재 강의에선 사용 x
+npm install next-auth
 ```
 
 2. 명령어

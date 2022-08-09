@@ -33,7 +33,7 @@ async function handler(
         id: foundToken.userId,
     };
     await req.session.save();
-    
+
     // token 확인후 token 삭제해버리기 (token 전부를 가지고 있을 필요 없으니까)
     await client.token.deleteMany({
         where: {
@@ -47,4 +47,8 @@ async function handler(
 }
 
 // req.session.user/save/destory를 사용하기 위해서 앞으로 다음 function만 추가하면 됨
-export default withApiSession( withHandler("POST", handler));
+export default withApiSession( withHandler({
+    method: "POST", 
+    handler,
+    isPrivate: false
+}));
