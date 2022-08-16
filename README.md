@@ -40,6 +40,9 @@ npm install iron-session
 # 7-1. NextAuth
 # iron-session 대신해서 사용가능. 훨씬 간편하지만 현재 강의에선 사용 x
 npm install next-auth
+
+# 8. SWR - 캐시저장
+npm i swr
 ```
 
 2. 명령어
